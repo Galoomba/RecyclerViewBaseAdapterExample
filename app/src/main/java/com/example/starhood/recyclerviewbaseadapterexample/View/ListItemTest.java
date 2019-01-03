@@ -4,9 +4,11 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.baseadapter.RecyclerViewView;
 import com.example.starhood.recyclerviewbaseadapterexample.POJO.DataClass;
@@ -49,7 +51,14 @@ public class ListItemTest extends RelativeLayout implements RecyclerViewView<Dat
 
     @Override
     public void bindData(DataClass item) {
+
         title.setText(item.getTitle());
         description.setText(item.getDisc());
+        btn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"hiiih",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

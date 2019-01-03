@@ -13,11 +13,11 @@ import com.example.starhood.recyclerviewbaseadapterexample.POJO.DataClass;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements OnRecyclerViewItemClickListener<DataClass>{
 
     private ArrayList<DataClass> data=new ArrayList<>();
     private String moocDisckSting ="dummy disc Flowers are also called the bloom or blossom of a plant. Flowers have petals. Inside the part of the flower that has petals are the parts which produce pollen and seeds. In all plants";
-
+    private BaseAdapter<DataClass> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,17 +30,25 @@ public class MainActivity extends AppCompatActivity  {
         RecyclerView recyclerView = findViewById(R.id.rec);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setHasFixedSize(true);
-        BaseAdapter<DataClass> adapter = new BaseAdapter<>(data, new OnRecyclerViewItemClickListener<DataClass>() {
-            @Override
-            public void onClick(DataClass pos) {
-                Toast.makeText(getApplicationContext(),"onClick on " +pos.getTitle(),Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onLongPress(DataClass pos) {
-                Toast.makeText(getApplicationContext(),"onLongClick on "+ pos.getTitle(),Toast.LENGTH_SHORT).show();
-            }
-        }, R.layout.list_item);
+
+        adapter = new BaseAdapter<>(data, this, R.layout.list_item);
+
+
         recyclerView.setAdapter(adapter);
+    }
+
+
+    @Override
+    public void onClick(DataClass pos) {
+        Toast.makeText(getApplicationContext(),"onClick on " +pos.getTitle(),Toast.LENGTH_SHORT).show();
+        adapter.delete(0);
+    }
+
+    @Override
+    public void onLongPress(DataClass pos) {
+        Toast.makeText(getApplicationContext(),"onLongClick on "+ pos.getTitle(),Toast.LENGTH_SHORT).show();
+        adapter.insert( new DataClass("mooc 11",moocDisckSting,"1474  Hawks Nest Lane,Saint Louis,MO,Missouri","www.dummy-website.com"));
+
     }
 }
