@@ -5,6 +5,6 @@ package com.example.baseadapter;
  */
 
 public interface OnRecyclerViewItemClickListener<T> {
-        void onClick(int pos);
-        void onLongPress(int pos);
+        void onClick(T pos);
+        void onLongPress(T pos);
 }

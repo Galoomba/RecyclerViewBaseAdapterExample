@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.example.baseadapter.BaseAdapter;
 import com.example.baseadapter.OnRecyclerViewItemClickListener;
@@ -31,13 +32,13 @@ public class MainActivity extends AppCompatActivity  {
         recyclerView.setHasFixedSize(true);
         BaseAdapter<DataClass> adapter = new BaseAdapter<>(data, new OnRecyclerViewItemClickListener<DataClass>() {
             @Override
-            public void onClick(int pos) {
-                //TODO ADD ONCLICK EVENTS
+            public void onClick(DataClass pos) {
+                Toast.makeText(getApplicationContext(),"onClick on " +pos.getTitle(),Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onLongPress(int pos) {
-                //TODO ADD ONLONGPRESS EVENTS
+            public void onLongPress(DataClass pos) {
+                Toast.makeText(getApplicationContext(),"onLongClick on "+ pos.getTitle(),Toast.LENGTH_SHORT).show();
             }
         }, R.layout.list_item);
         recyclerView.setAdapter(adapter);
