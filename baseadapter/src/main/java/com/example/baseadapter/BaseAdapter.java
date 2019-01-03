@@ -32,9 +32,26 @@ public class BaseAdapter<T> extends RecyclerView.Adapter<BaseAdapter.ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.view.bindData(dataList.get(position));
-        //TODO ADD THE CLICK LISTENER
+        ((View) holder.view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (deleget != null) {
+                    deleget.onClick(dataList.get(position));
+                }
+            }
+        });
+        ((View) holder.view).setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if(deleget!=null){
+                    deleget.onLongPress(dataList.get(position));
+                }
+                return true;
+            }
+        });
+
     }
 
     @Override
