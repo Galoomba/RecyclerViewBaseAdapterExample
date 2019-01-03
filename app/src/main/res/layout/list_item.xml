@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.starhood.recyclerviewbaseadapterexample.View.ListItemTest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/titlex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="dummy_title"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:paddingStart="2dp"
+        android:text="....."
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/seec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlex"
+        android:layout_margin="4dp"
+        android:padding="8dp"
+        android:text="dummy disc sdasadsfsadsadsadsadsdsadsads dsafs adsa safsaf sfsa fs fsa fsa dsa fsa gsa ds gfsa ds gsa d sgs ad sad sag sad s gsa ds a gsa dsa "
+        android:textSize="14sp" />
+
+
+</com.example.starhood.recyclerviewbaseadapterexample.View.ListItemTest>

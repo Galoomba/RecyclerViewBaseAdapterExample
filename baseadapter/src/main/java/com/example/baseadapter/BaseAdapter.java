@@ -33,17 +33,20 @@ public class BaseAdapter<T> extends RecyclerView.Adapter<BaseAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.view.bindData(dataList.get(position));
+        //TODO ADD THE CLICK LISTENER
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        public RecyclerViewView view;
         public ViewHolder(RecyclerViewView itemView) {
             super((View)itemView);
+            view=itemView;
         }
     }
 }
