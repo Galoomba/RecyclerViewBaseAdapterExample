@@ -2,6 +2,7 @@ package com.example.baseadapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,10 +17,18 @@ public class BaseAdapter<T> extends RecyclerView.Adapter<BaseAdapter.ViewHolder>
     private OnRecyclerViewItemClickListener<T> deleget;
     private int layoutId;
 
+
+    public BaseAdapter(ArrayList<T> dataList, OnRecyclerViewItemClickListener<T> deleget, int layoutId) {
+        this.dataList = dataList;
+        this.deleget = deleget;
+        this.layoutId = layoutId;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        RecyclerViewView<T> view = (RecyclerViewView<T>) LayoutInflater.from(parent.getContext()).inflate(layoutId,parent,false);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -32,9 +41,9 @@ public class BaseAdapter<T> extends RecyclerView.Adapter<BaseAdapter.ViewHolder>
         return 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public ViewHolder(View itemView) {
-            super(itemView);
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public ViewHolder(RecyclerViewView itemView) {
+            super((View)itemView);
         }
     }
 }
