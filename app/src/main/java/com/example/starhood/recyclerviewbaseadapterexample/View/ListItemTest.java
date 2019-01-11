@@ -16,7 +16,7 @@ import com.example.starhood.recyclerviewbaseadapterexample.R;
 
 /**
  * Created by starhood on 03/01/19.
- */
+
 
 public class ListItemTest extends RelativeLayout implements RecyclerViewView<DataClass>{
 
@@ -62,3 +62,4 @@ public class ListItemTest extends RelativeLayout implements RecyclerViewView<Dat
         });
     }
 }
+ */

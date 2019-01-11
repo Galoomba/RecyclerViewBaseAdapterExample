@@ -51,4 +51,5 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewIte
         adapter.insert( new DataClass("mooc 11",moocDisckSting,"1474  Hawks Nest Lane,Saint Louis,MO,Missouri","www.dummy-website.com"));
 
     }
+
 }

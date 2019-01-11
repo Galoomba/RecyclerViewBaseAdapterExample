@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.starhood.recyclerviewbaseadapterexample.View.ListItemTest xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.starhood.recyclerviewbaseadapterexample.View.viewTest xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="4dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
     <TextView
         android:id="@+id/titlex"
         android:layout_width="wrap_content"
@@ -37,6 +41,5 @@
         android:padding="8dp"
         android:text="dummy disc sdasadsfsadsadsadsadsdsadsads dsafs adsa safsaf sfsa fs fsa fsa dsa fsa gsa ds gfsa ds gsa d sgs ad sad sag sad s gsa ds a gsa dsa "
         android:textSize="14sp" />
-
-
-</com.example.starhood.recyclerviewbaseadapterexample.View.ListItemTest>
+   </RelativeLayout>
+</com.example.starhood.recyclerviewbaseadapterexample.View.viewTest>

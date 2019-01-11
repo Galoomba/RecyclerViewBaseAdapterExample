@@ -42,16 +42,16 @@ public class BaseAdapter<T> extends RecyclerView.Adapter<BaseAdapter.ViewHolder>
                 }
             }
         });
+
         ((View) holder.view).setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                if(deleget!=null){
+                if (deleget != null) {
                     deleget.onLongPress(dataList.get(position));
                 }
                 return true;
             }
         });
-
     }
 
     @Override
